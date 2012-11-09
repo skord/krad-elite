@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :provider, :uid, :nickname
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :provider, :uid, :nickname, :github_token
   # attr_accessible :title, :body
 
   def self.from_omniauth(auth)
@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
       user.uid = auth.uid
       user.username = auth.info.nickname
       user.email = auth.info.email
+      user.github_token = auth.credentials.token
+      # raise auth.to_yaml
     end
   end
 
