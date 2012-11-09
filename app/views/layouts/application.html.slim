@@ -2,11 +2,13 @@ doctype html
 html lang="en"
   head
     meta charset="utf-8"
+    meta name='viewport' content="width=device-width, initial-scale=1.0"
     = stylesheet_link_tag "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
   body
-    #container-fluid
+    .container-fluid
+      = render 'shared/navbar'
       - if notice
           p.alert.alert-info #{notice}
       - if alert

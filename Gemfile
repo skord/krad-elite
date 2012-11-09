@@ -30,7 +30,7 @@ gem 'jquery-rails'
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'
@@ -47,6 +47,7 @@ group :development, :test do
   gem 'ZenTest'
   gem 'autotest-growl'
   gem 'autotest-fsevent'
+  gem 'factory_girl_rails'
 end
 
 gem 'devise'
@@ -54,3 +55,4 @@ gem 'slim'
 gem "slim-rails"
 gem 'octokit'
 gem 'omniauth-github'
+gem 'foreman'
