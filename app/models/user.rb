@@ -16,7 +16,6 @@ class User < ActiveRecord::Base
       user.username = auth.info.nickname
       user.email = auth.info.email
       user.github_token = auth.credentials.token
-      # raise auth.to_yaml
     end
   end
 
@@ -33,4 +32,34 @@ class User < ActiveRecord::Base
   def password_required?
     super && provider.blank?
   end
+
+
+  def gists
+    octokit.gists
+  end
+
+  def repos
+    pages = octokit.user
+    octokit.repos
+  end
+
+  def location
+    octokit.user.location
+  end
+
+  def organizations
+    octokit.organizations
+  end
+
+  def github_user?
+    provider == 'github' && uid.present?
+  end
+
+  private
+
+  def octokit
+    Octokit::Client.new(login: username, oauth_token: github_token, auto_traversal: true)
+  end
+
+
 end

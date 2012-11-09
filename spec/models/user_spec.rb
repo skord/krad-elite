@@ -23,5 +23,20 @@ describe User do
     it "should respond to :github_token" do
       @user.should respond_to(:github_token)
     end
+    it "should respond to :location" do
+      @user.should respond_to(:location)
+    end
+    it "should respond to :organizations" do
+      @user.should respond_to(:organizations)
+    end
+    it "should respond to :gists" do
+      @user.should respond_to(:gists)
+    end
+    it "should respond_to :repos" do
+      @user.should respond_to(:repos)
+    end
+    it "should respond_to :github_user?" do
+      @user.should respond_to(:github_user?)
+    end
   end
 end
