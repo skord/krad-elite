@@ -33,6 +33,7 @@ class User < ActiveRecord::Base
     super && provider.blank?
   end
 
+  # TODO: Move all this into its own class/module
 
   def gists
     octokit.gists
@@ -51,14 +52,19 @@ class User < ActiveRecord::Base
     octokit.organizations
   end
 
+  def starred
+    octokit.starred
+  end
+
+
   def github_user?
-    provider == 'github' && uid.present?
+    provider == 'github' && uid.present? && github_token.present?
   end
 
   private
 
   def octokit
-    Octokit::Client.new(login: username, oauth_token: github_token, auto_traversal: true)
+    Octokit::Client.new(login: username, oauth_token: github_token, auto_traversal: true) if github_user?
   end
 
 

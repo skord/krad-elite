@@ -30,7 +30,10 @@ gem 'jquery-rails'
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-gem 'unicorn'
+# commenting this out so we can use embedded this so we can use Faye for push
+# gem 'unicorn'
+gem 'thin'
+
 
 # Deploy with Capistrano
 # gem 'capistrano'
@@ -56,3 +59,4 @@ gem "slim-rails"
 gem 'octokit'
 gem 'omniauth-github'
 gem 'foreman'
+gem 'faye-rails'

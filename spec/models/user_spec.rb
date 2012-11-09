@@ -38,5 +38,8 @@ describe User do
     it "should respond_to :github_user?" do
       @user.should respond_to(:github_user?)
     end
+    it "should respond_to :starred" do
+      @user.should respond_to(:starred)
+    end
   end
 end
