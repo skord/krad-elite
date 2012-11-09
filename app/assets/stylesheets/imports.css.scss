@@ -1,0 +1,27 @@
+$navbarBackground: darken(#cee3f8, 40%);
+$navbarBackgroundHighlight: darken(#cee3f8, 20%);
+$navbarText: white;
+$navbarLinkColor: white;
+$redditOrange: #ff5700;
+$orangered: #ff4500;
+$upvote: #ff8b60;
+$neutral: #c6c6c6;
+$downvote: #9494ff;
+
+@import "bootstrap";
+@import "bootstrap-responsive";
+
+.label-orangered,
+.badge-orangered {
+	background-color: #ff4500;
+}
+
+.label-upvote,
+.badge-upvote {
+  background-color: #ff8b60;
+}
+
+.label-downvote,
+.badge-downvote {
+  background-color: #9494ff;
+}
